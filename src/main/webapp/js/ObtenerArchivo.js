@@ -12,4 +12,5 @@ function cargarArchivo(elemento){
     //document.subirArchivo.target = "null";
     document.subirArchivo.action = "ServletDescargarArchivo";
     document.subirArchivo.submit();
+    alert("Archivo cargado");
 }

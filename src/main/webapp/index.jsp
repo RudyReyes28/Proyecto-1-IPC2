@@ -3,7 +3,7 @@
     Created on : 13 mar. 2023, 18:47:23
     Author     : rudy-reyes
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
     </head>
     <body>
         
-        <form name="subirArchivo" method="post">
+        <form name="subirArchivo" method="post" enctype="multipart/form-data">
             <div class="container my-3">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <!-- Button trigger modal -->
@@ -47,29 +47,42 @@
         </form>
         
         <iframe name="null" style="display:none;"></iframe>
-       
-        <div class="container my-5">
-            <div class="row justify-content-center  p-5">
-                <div class="text-center mb-8 col-xl-4 border border-primary rounded" >
-                    <h2>Ingresar usuario</h2> 
-                    <form>
+
+        <form action="ServletLoginUsuario?accion=verificar" method="post">
+            <div class="container my-5">
+                <div class="row justify-content-center  p-5">
+                    <div class="text-center mb-8 col-xl-4 border border-primary rounded" >
+                        <h2>Ingresar usuario</h2> 
+                        
                         <div class="mb-3 my-4">
                             <label for="ingresarUsuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="ingresarUsuario">
+                            <input type="text" name="usuario" class="form-control" id="ingresarUsuario">
 
                         </div>
                         <div class="mb-3">
                             <label for="ingresarContraseña" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" name="contraseña" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary">Ingresar</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             
+        </form>
+    <c:if test="${!empty(error)}">
+        <div class="alert alert-warning alert-dismissible fade show container justify-content-center " role="alert">
+            <strong>${error}</strong> Compruebe si el usuario y la contraseña sean correctos.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+    </c:if>
+        
+        
+        <!-- <div class="alert alert-warning alert-dismissible fade show social-auth-links text-center" role="alert">
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-info"></i> 
+        ${error}</a>
+        </div>  -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>
