@@ -1,3 +1,4 @@
+com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesPedidos.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirAdmin.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirEnvio.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirIncidencia.class
@@ -31,6 +32,8 @@ com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirPedido.class
 com/rudyreyes/proyecto/ipc2/modelo/Usuario.class
 com/rudyreyes/proyecto/ipc2/modelo/util/CifrarContraseña.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarAdminTienda.class
+com/rudyreyes/proyecto/ipc2/controlador/ServletOpcionesTienda.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirUsuariosTienda.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarAdminSupervisor.class
 com/rudyreyes/proyecto/ipc2/modelo/entidades/Producto.class
+com/rudyreyes/proyecto/ipc2/controlador/ServletControladorPedido.class

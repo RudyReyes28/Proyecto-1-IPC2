@@ -91,18 +91,18 @@ public class ServletLoginUsuario extends HttpServlet {
             
         }else if(usuario != null && usuario.getCargo().equals("TIENDA")){
             sesion = request.getSession();
-            sesion.setAttribute("usuarioTienda", usuario);
+            sesion.setAttribute("usuario", usuario);
             //this.getServletConfig().getServletContext().getRequestDispatcher("vistaUsuarioTienda.jsp").forward(request, response);
             response.sendRedirect("vistaUsuarioTienda.jsp");
             
         }else if(usuario != null && usuario.getCargo().equals("BODEGA")){
             sesion = request.getSession();
-            sesion.setAttribute("usuarioBodega", usuario);
+            sesion.setAttribute("usuario", usuario);
             //this.getServletConfig().getServletContext().getRequestDispatcher("vistaUsuarioBodega.jsp").forward(request, response);
             response.sendRedirect("vistaUsuarioBodega.jsp");
         }else if(usuario != null && usuario.getCargo().equals("SUPERVISOR")){
             sesion = request.getSession();
-            sesion.setAttribute("usuarioSupervisor", usuario);
+            sesion.setAttribute("usuario", usuario);
             //this.getServletConfig().getServletContext().getRequestDispatcher("vistaUsuarioSupervisor.jsp").forward(request, response);
             response.sendRedirect("vistaUsuarioSupervisor.jsp");
             

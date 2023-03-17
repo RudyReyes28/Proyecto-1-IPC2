@@ -35,6 +35,15 @@ public class Pedido {
         this.estado = estado;
     }
 
+    public Pedido(int codigoTienda, int codigoUsuario, String fechaPedido, String estado) {
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaPedido = fechaPedido;
+        this.estado = estado;
+    }
+    
+    
+
     public int getIdPedido() {
         return idPedido;
     }

@@ -14,6 +14,7 @@ public class ProductoPedido {
     private double costoU;
     private int cantidad;
     private double costoTotal;
+    private String nombre;
 
     public ProductoPedido(int idPedido, int codigo, double costoU, int cantidad, double costoTotal) {
         this.idPedido = idPedido;
@@ -22,6 +23,16 @@ public class ProductoPedido {
         this.cantidad = cantidad;
         this.costoTotal = costoTotal;
     }
+
+    public ProductoPedido(int codigo, double costoU, int cantidad, double costoTotal, String nombre) {
+        this.codigo = codigo;
+        this.costoU = costoU;
+        this.cantidad = cantidad;
+        this.costoTotal = costoTotal;
+        this.nombre = nombre;
+    }
+    
+    
 
     public int getIdPedido() {
         return idPedido;
@@ -62,6 +73,11 @@ public class ProductoPedido {
     public void setCostoTotal(double costoTotal) {
         this.costoTotal = costoTotal;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
     
     
 }
