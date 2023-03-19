@@ -31,6 +31,25 @@ public class ProductoPedido {
         this.costoTotal = costoTotal;
         this.nombre = nombre;
     }
+
+    public ProductoPedido(int idPedido, int codigo, double costoU, int cantidad, double costoTotal, String nombre) {
+        this.idPedido = idPedido;
+        this.codigo = codigo;
+        this.costoU = costoU;
+        this.cantidad = cantidad;
+        this.costoTotal = costoTotal;
+        this.nombre = nombre;
+    }
+
+    public ProductoPedido(int idPedido, int codigo, int cantidad, double costoTotal) {
+        this.idPedido = idPedido;
+        this.codigo = codigo;
+        this.cantidad = cantidad;
+        this.costoTotal = costoTotal;
+    }
+
+    
+    
     
     
 

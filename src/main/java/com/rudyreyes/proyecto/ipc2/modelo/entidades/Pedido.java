@@ -41,6 +41,13 @@ public class Pedido {
         this.fechaPedido = fechaPedido;
         this.estado = estado;
     }
+
+    public Pedido(int idPedido, int codigoUsuario, String fechaPedido, double totalPedido) {
+        this.idPedido = idPedido;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaPedido = fechaPedido;
+        this.totalPedido = totalPedido;
+    }
     
     
 

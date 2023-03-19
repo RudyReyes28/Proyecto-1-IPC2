@@ -33,7 +33,7 @@
                                     <td>${pedido.cantidad}</td>
                                     <td>${pedido.costoTotal}</td>
                                     <td>
-                                        <a href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idCliente=${cliente.idCliente}"
+                                        <a href="${pageContext.request.contextPath}/ServletControladorPedido?accion=editar&idPedido=${idPedido}&codigoP=${pedido.codigo}"
                                            class="btn btn-secondary">
                                             <i class="fas fa-angle-double-right"></i> Editar
                                         </a>

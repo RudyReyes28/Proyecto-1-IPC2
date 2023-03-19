@@ -205,4 +205,127 @@ public class ConexionesPedidos {
         return listaP;
     }
 
+    
+    public static ProductoPedido encontrarProductoPedido(int idPedido, int codigoP){
+        
+        int codigoProducto;
+        double costoUnitario;
+        int cantidad;
+        double costoTotal;
+        String nombreProducto;
+        ProductoPedido pd = null;
+
+        Conexion con = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("SELECT codigo_producto, costo_unitario, cantidad, "
+                    + "costoTotal FROM productos_pedidos WHERE"
+                    + " idpedido = ? AND codigo_producto = ?");
+            
+            ps.setInt(1, idPedido);
+            ps.setInt(2, codigoP);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                codigoProducto = rs.getInt("codigo_producto");
+                costoUnitario = rs.getDouble("costo_unitario");
+                cantidad = rs.getInt("cantidad");
+                costoTotal = rs.getDouble("costoTotal");
+                nombreProducto = obtenerNombreProducto(codigoP);
+                
+                pd = new ProductoPedido(idPedido,codigoProducto, costoUnitario, cantidad, costoTotal, nombreProducto);
+                
+            }
+
+            conexion.close();
+
+        } catch (Exception e) {
+            System.err.println(e);
+
+        }
+
+        return pd;
+    }
+    
+    public static boolean modificarProductoPedido(ProductoPedido productoP){
+       
+        Conexion con = new Conexion();
+        PreparedStatement ps = null;
+        
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("UPDATE productos_pedidos SET cantidad=?, costoTotal=? WHERE idpedido =? AND codigo_producto =?");
+            
+            ps.setInt(1, productoP.getCantidad());
+            ps.setDouble(2, productoP.getCostoTotal());
+            ps.setInt(3, productoP.getIdPedido());
+            ps.setInt(4, productoP.getCodigo());
+            
+            int resultado = ps.executeUpdate();
+            
+            conexion.close();
+            
+            if(resultado>0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        
+    }
+    
+    public static boolean eliminarProductoPedido(int idPedido, int idProducto){
+        Conexion con = new Conexion();
+        PreparedStatement ps = null;
+        
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("DELETE FROM productos_pedidos WHERE idpedido =? AND codigo_producto =?");
+            ps.setInt(1, idPedido);
+            ps.setInt(2, idProducto);
+            int resultado = ps.executeUpdate();
+            
+            conexion.close();
+            
+            if(resultado>0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    public static boolean modificarCostoPedido(int idPedido,double total){
+       
+        Conexion con = new Conexion();
+        PreparedStatement ps = null;
+        
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("UPDATE pedido SET total_pedido=? WHERE idpedido =?");
+            
+            ps.setDouble(1, total);
+            ps.setInt(2, idPedido);
+            
+            int resultado = ps.executeUpdate();
+            
+            conexion.close();
+            
+            if(resultado>0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        
+    }
 }

@@ -14,6 +14,7 @@ public class ProductoEnviado {
     private double costoU;
     private int cantidad;
     private double costoTotal;
+    private String nombre;
 
     public ProductoEnviado(int idEnvio, int codigo, double costoU, int cantidad, double costoTotal) {
         this.idEnvio = idEnvio;
@@ -22,6 +23,33 @@ public class ProductoEnviado {
         this.cantidad = cantidad;
         this.costoTotal = costoTotal;
     }
+
+    public ProductoEnviado(int codigo, double costoU, int cantidad, double costoTotal, String nombre) {
+        
+        this.codigo = codigo;
+        this.costoU = costoU;
+        this.cantidad = cantidad;
+        this.costoTotal = costoTotal;
+        this.nombre = nombre;
+    }
+
+    public ProductoEnviado(int idEnvio, int codigo, double costoU, int cantidad, double costoTotal, String nombre) {
+        this.idEnvio = idEnvio;
+        this.codigo = codigo;
+        this.costoU = costoU;
+        this.cantidad = cantidad;
+        this.costoTotal = costoTotal;
+        this.nombre = nombre;
+    }
+
+    public ProductoEnviado(int idEnvio, int codigo, int cantidad, double costoTotal) {
+        this.idEnvio = idEnvio;
+        this.codigo = codigo;
+        this.cantidad = cantidad;
+        this.costoTotal = costoTotal;
+    }
+    
+    
 
     public int getIdEnvio() {
         return idEnvio;
@@ -62,6 +90,15 @@ public class ProductoEnviado {
     public void setCostoTotal(double costoTotal) {
         this.costoTotal = costoTotal;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
     
 }

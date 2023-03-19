@@ -37,6 +37,15 @@ public class Envio {
         this.estado = estado;
     }
 
+    public Envio(int codigoTienda, int codigoUsuario, String fechaSalida, String estado) {
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaSalida = fechaSalida;
+        this.estado = estado;
+    }
+
+    
+    
     public int getIdEnvio() {
         return idEnvio;
     }

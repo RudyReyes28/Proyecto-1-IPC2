@@ -47,18 +47,23 @@ public class ServletControladorPedido extends HttpServlet {
                         insertarProducto(request, response);
                         break;
                     case "modificar":
-
+                        modificarProducto(request, response);
                         break;
 
                     case "editar":
-
+                        editarProducto(request, response);
                         break;
 
                     case "eliminar":
+                        eliminarProducto(request, response);
+                        break;
+                        
+                    case "enviar":
+                        enviarPedido(request, response);
                         break;
 
                     default:
-                        
+                       accionDefault(request, response); 
 
                 }
             } else {
@@ -111,10 +116,71 @@ public class ServletControladorPedido extends HttpServlet {
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-        ArrayList<ProductoPedido> listadoP = ConexionesPedidos.obtenerProductosPedidos((int) sesion.getAttribute("idPedido"));
+        ArrayList<ProductoPedido> listadoP = ConexionesPedidos.obtenerProductosPedidos(Integer.parseInt(String.valueOf( sesion.getAttribute("idPedido"))));
         
         sesion.setAttribute("listadoP", listadoP);
         response.sendRedirect("moduloTienda/pedido.jsp");
+    }
+
+    private void editarProducto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+        int codigoProducto = Integer.parseInt(request.getParameter("codigoP"));
+        
+        ProductoPedido productoP = ConexionesPedidos.encontrarProductoPedido(idPedido, codigoProducto);
+        
+        
+        request.setAttribute("productoP", productoP);
+        
+        request.getRequestDispatcher("/WEB-INF/vistaPedido/editarPedido.jsp").forward(request, response);
+        
+    }
+
+    private void modificarProducto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+        int idProducto = Integer.parseInt(request.getParameter("codigoP"));
+        int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+        double costoTotal = Double.parseDouble(request.getParameter("costoU"))*cantidad;
+        ProductoPedido pd = new ProductoPedido(idPedido, idProducto, cantidad, costoTotal);
+        
+        boolean realizado = ConexionesPedidos.modificarProductoPedido(pd);
+        
+        accionDefault(request, response);
+    
+    }
+
+    private void eliminarProducto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    
+        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+        int idProducto = Integer.parseInt(request.getParameter("codigoP"));
+        
+        boolean realizado = ConexionesPedidos.eliminarProductoPedido(idPedido, idProducto);
+        
+        accionDefault(request, response);
+    
+    }
+
+    private void enviarPedido(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession sesion = request.getSession();
+        int idPedido =Integer.parseInt(String.valueOf( sesion.getAttribute("idPedido")));
+        //NECESITO VER EL TOTAL PARA AGREGARLO EN PEDIDOS
+         ArrayList<ProductoPedido> listadoP = ConexionesPedidos.obtenerProductosPedidos(idPedido);
+         
+        double totalPedido = 0;
+         for(ProductoPedido productos: listadoP){
+             totalPedido += productos.getCostoTotal();
+         }
+         
+        ConexionesPedidos.modificarCostoPedido(idPedido, totalPedido);
+        /*try{
+            sesion.removeAttribute("idPedido");
+            sesion.removeAttribute("listadoP");---->
+            sesion.removeAttribute("catalogo");
+        }catch(Exception e){
+            e.printStackTrace();
+        }*/
+        response.sendRedirect("vistaUsuarioTienda.jsp");
+        
     }
 
 }

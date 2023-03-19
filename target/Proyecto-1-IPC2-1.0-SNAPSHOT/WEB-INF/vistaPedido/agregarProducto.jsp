@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Guardar Pedido</button>
+                    <button class="btn btn-primary" type="submit">Guardar Producto</button>
                 </div>    
             </form>
         </div>

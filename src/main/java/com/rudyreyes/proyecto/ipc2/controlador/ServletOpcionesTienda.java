@@ -103,7 +103,7 @@ public class ServletOpcionesTienda extends HttpServlet {
 
         Pedido pedido = new Pedido(codigoTienda, codigoUsuario, fecha, estado);
 
-        if (codigoUsuario != -1) {
+        if (codigoTienda != -1) {
             boolean realizado = ConexionesPedidos.agregarPedido(pedido);
 
             if (realizado) {
