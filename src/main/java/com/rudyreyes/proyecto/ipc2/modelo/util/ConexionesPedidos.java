@@ -328,4 +328,29 @@ public class ConexionesPedidos {
         }
         
     }
+    
+    public static String obtenerTipoTienda(int idTienda) {
+        String nombreT = "";
+        Conexion con = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("SELECT tipo_tienda from tienda where codigo = " + idTienda + ";");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                nombreT = rs.getString("tipo_tienda");
+            }
+
+            conexion.close();
+
+        } catch (Exception e) {
+            System.err.println(e);
+
+        }
+
+        return nombreT;
+    }
 }

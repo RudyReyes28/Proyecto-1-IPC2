@@ -99,12 +99,13 @@ public class ConexionesEnvios {
 
         try {
             Connection conexion = con.getConnection();
-            ps = conexion.prepareStatement("INSERT INTO envios(codigo_tienda, codigo_usuario, fecha_salida,estado) VALUES (?,?,?,?)");
-
-            ps.setInt(1, envio.getCodigoTienda());
-            ps.setInt(2, envio.getCodigoUsuario());
-            ps.setString(3, envio.getFechaSalida());
-            ps.setString(4, envio.getEstado());
+            ps = conexion.prepareStatement("INSERT INTO envios(idpedido,codigo_tienda, codigo_usuario, fecha_salida,estado) VALUES (?,?,?,?,?)");
+            
+            ps.setInt(1, envio.getIdPedido());
+            ps.setInt(2, envio.getCodigoTienda());
+            ps.setInt(3, envio.getCodigoUsuario());
+            ps.setString(4, envio.getFechaSalida());
+            ps.setString(5, envio.getEstado());
             ps.executeUpdate();
             ps.close();
             return true;

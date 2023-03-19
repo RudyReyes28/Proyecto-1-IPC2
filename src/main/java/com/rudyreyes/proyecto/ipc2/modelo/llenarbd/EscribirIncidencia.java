@@ -22,13 +22,14 @@ public class EscribirIncidencia {
         
         try {
             Connection conexion = con.getConnection();
-            ps = conexion.prepareStatement("INSERT INTO incidencia(idincidencia, codigo_tienda,codigo_usuario,fecha_incidencia,solucion,estado) VALUES (?,?,?,?,?,?)");
+            ps = conexion.prepareStatement("INSERT INTO incidencia(idincidencia, idenvio, codigo_tienda,codigo_usuario,fecha_incidencia,solucion,estado) VALUES (?,?,?,?,?,?,?)");
             ps.setInt(1, incidencia.getIdIncidencia());
-            ps.setInt(2, incidencia.getCodigoTienda());
-            ps.setInt(3, incidencia.getCodigoUsuario());
-            ps.setString(4, incidencia.getFechaIncidencia());
-            ps.setString(5, incidencia.getSolucion());
-            ps.setString(6, incidencia.getEstado());
+            ps.setInt(2, incidencia.getIdEnvio());
+            ps.setInt(3, incidencia.getCodigoTienda());
+            ps.setInt(4, incidencia.getCodigoUsuario());
+            ps.setString(5, incidencia.getFechaIncidencia());
+            ps.setString(6, incidencia.getSolucion());
+            ps.setString(7, incidencia.getEstado());
             ps.executeUpdate();
             ps.close();
             return true;

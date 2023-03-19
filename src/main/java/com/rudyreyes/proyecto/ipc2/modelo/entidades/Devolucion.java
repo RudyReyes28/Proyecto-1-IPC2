@@ -10,6 +10,7 @@ package com.rudyreyes.proyecto.ipc2.modelo.entidades;
  */
 public class Devolucion {
     private int idDevolucion;
+    private int idEnvio;
     private int codigoTienda;
     private int codigoUsuario;
     private String fechaDevolucion;
@@ -24,6 +25,18 @@ public class Devolucion {
         this.totalDevolucion = totalDevolucion;
         this.estado = estado;
     }
+
+    public Devolucion(int idDevolucion, int idEnvio, int codigoTienda, int codigoUsuario, String fechaDevolucion, double totalDevolucion, String estado) {
+        this.idDevolucion = idDevolucion;
+        this.idEnvio = idEnvio;
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaDevolucion = fechaDevolucion;
+        this.totalDevolucion = totalDevolucion;
+        this.estado = estado;
+    }
+    
+    
 
     public int getIdDevolucion() {
         return idDevolucion;
@@ -71,6 +84,14 @@ public class Devolucion {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public int getIdEnvio() {
+        return idEnvio;
+    }
+
+    public void setIdEnvio(int idEnvio) {
+        this.idEnvio = idEnvio;
     }
     
     

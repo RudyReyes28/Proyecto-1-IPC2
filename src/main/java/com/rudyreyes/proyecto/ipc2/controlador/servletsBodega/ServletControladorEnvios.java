@@ -140,7 +140,7 @@ public class ServletControladorEnvios extends HttpServlet {
         String fecha = currentDate.toString();
         String estado = "DESPACHADO";
 
-        Envio envio = new Envio(codigoTienda, codigoUsuario, fecha, estado);
+        Envio envio = new Envio(codigoTienda, codigoUsuario, fecha, estado, idPedido);
         boolean realizado = ConexionesEnvios.agregarEnvio(envio);
 
         if (realizado) {

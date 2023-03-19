@@ -7,9 +7,11 @@ com/rudyreyes/proyecto/ipc2/modelo/entidades/UsuarioTienda.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirSupervisores.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarBodegaCatalogo.class
 com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesEnvios.class
+com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesRecibirEnvio.class
 com/rudyreyes/proyecto/ipc2/modelo/entidades/UsuarioBodega.class
 com/rudyreyes/proyecto/ipc2/controlador/servletsBodega/ServletControladorEnvios.class
 com/rudyreyes/proyecto/ipc2/modelo/entidades/Pedido.class
+com/rudyreyes/proyecto/ipc2/controlador/servletsTienda/ServletRecibirEnvio.class
 com/rudyreyes/proyecto/ipc2/modelo/entidades/ProductoPedido.class
 com/rudyreyes/proyecto/ipc2/modelo/entidades/Devolucion.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirEncargadoBodega.class

@@ -11,6 +11,7 @@ package com.rudyreyes.proyecto.ipc2.modelo.entidades;
 public class Incidencia {
     
     private int idIncidencia;
+    private int idEnvio;
     private int codigoTienda;
     private int codigoUsuario;
     private String fechaIncidencia;
@@ -26,6 +27,18 @@ public class Incidencia {
         this.estado = estado;
     }
 
+    public Incidencia(int idIncidencia, int idEnvio, int codigoTienda, int codigoUsuario, String fechaIncidencia, String solucion, String estado) {
+        this.idIncidencia = idIncidencia;
+        this.idEnvio = idEnvio;
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaIncidencia = fechaIncidencia;
+        this.solucion = solucion;
+        this.estado = estado;
+    }
+
+    
+    
     public int getIdIncidencia() {
         return idIncidencia;
     }
@@ -72,6 +85,14 @@ public class Incidencia {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public int getIdEnvio() {
+        return idEnvio;
+    }
+
+    public void setIdEnvio(int idEnvio) {
+        this.idEnvio = idEnvio;
     }
     
     

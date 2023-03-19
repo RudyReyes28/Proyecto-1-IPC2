@@ -7,6 +7,7 @@ package com.rudyreyes.proyecto.ipc2.controlador;
 import com.rudyreyes.proyecto.ipc2.modelo.Usuario;
 import com.rudyreyes.proyecto.ipc2.modelo.entidades.Pedido;
 import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesPedidos;
+import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesRecibirEnvio;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,15 +26,6 @@ import java.util.ArrayList;
 @WebServlet(name = "ServletOpcionesTienda", urlPatterns = {"/ServletOpcionesTienda"})
 public class ServletOpcionesTienda extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -53,6 +45,7 @@ public class ServletOpcionesTienda extends HttpServlet {
                         break;
 
                     case "envios":
+                        iniciarEnvios(request, response);
                         break;
 
                     case "productos":
@@ -99,7 +92,14 @@ public class ServletOpcionesTienda extends HttpServlet {
         int codigoTienda = ConexionesPedidos.obtenerTienda(codigoUsuario);
         LocalDate currentDate = LocalDate.now();
         String fecha = currentDate.toString();
+        
         String estado = "SOLICITADO";
+        
+        String tipo = ConexionesPedidos.obtenerTipoTienda(codigoTienda);
+        
+        if(tipo.equalsIgnoreCase("supervisada")){
+            estado = "PENDIENTE";
+        }
 
         Pedido pedido = new Pedido(codigoTienda, codigoUsuario, fecha, estado);
 
@@ -109,17 +109,37 @@ public class ServletOpcionesTienda extends HttpServlet {
             if (realizado) {
                 int idPedido = ConexionesPedidos.obtenerIdPedido(codigoUsuario);
                 ArrayList<Integer> catalogoProductos = ConexionesPedidos.obtenerIdProductos(codigoTienda);
-                
-                if(catalogoProductos!=null && idPedido!=-1){
+
+                if (catalogoProductos != null && idPedido != -1) {
                     sesion.setAttribute("idPedido", idPedido);
-                    sesion.setAttribute("catalogo",catalogoProductos);
+                    sesion.setAttribute("catalogo", catalogoProductos);
                     response.sendRedirect("moduloTienda/pedido.jsp");
-                }else{
+                } else {
                     response.sendRedirect("vistaUsuarioTienda.jsp");
                 }
             }
         }
 
+    }
+
+    private void iniciarEnvios(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        HttpSession sesion = request.getSession();
+        Usuario user = (Usuario) sesion.getAttribute("usuario");
+        int codigoUsuario = user.getCodigo();
+        int codigoTienda = ConexionesPedidos.obtenerTienda(codigoUsuario);
+
+        //ONTENER EL ID DE LOS ENVIOS CON CODIGO DE TIENDA
+        ArrayList<Integer> listaEnvios = ConexionesRecibirEnvio.obtenerIdEnvios(codigoTienda);
+
+        if (listaEnvios != null) {
+            sesion.setAttribute("codigoUsuario", codigoUsuario);
+            sesion.setAttribute("codigoTienda", codigoTienda);
+            sesion.setAttribute("listadoEnvio", listaEnvios);
+            response.sendRedirect("moduloTienda/recibirEnvio.jsp");
+        } else {
+            response.sendRedirect("vistaUsuarioTienda.jsp");
+        }
     }
 
 }

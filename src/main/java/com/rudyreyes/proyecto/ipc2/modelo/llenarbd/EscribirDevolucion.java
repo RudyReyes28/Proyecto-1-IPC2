@@ -22,13 +22,15 @@ public class EscribirDevolucion {
         
         try {
             Connection conexion = con.getConnection();
-            ps = conexion.prepareStatement("INSERT INTO devolucion(iddevolucion, codigo_tienda,codigo_usuario,fecha_devolucion,total,estado) VALUES (?,?,?,?,?,?)");
+            ps = conexion.prepareStatement("INSERT INTO devolucion(iddevolucion, idenvio, codigo_tienda,codigo_usuario,fecha_devolucion,total,estado) VALUES (?,?,?,?,?,?,?)");
+            
             ps.setInt(1, devolucion.getIdDevolucion());
-            ps.setInt(2, devolucion.getCodigoTienda());
-            ps.setInt(3, devolucion.getCodigoUsuario());
-            ps.setString(4, devolucion.getFechaDevolucion());
-            ps.setDouble(5, devolucion.getTotalDevolucion());
-            ps.setString(6, devolucion.getEstado());
+            ps.setInt(2, devolucion.getIdEnvio());
+            ps.setInt(3, devolucion.getCodigoTienda());
+            ps.setInt(4, devolucion.getCodigoUsuario());
+            ps.setString(5, devolucion.getFechaDevolucion());
+            ps.setDouble(6, devolucion.getTotalDevolucion());
+            ps.setString(7, devolucion.getEstado());
             ps.executeUpdate();
             ps.close();
             return true;

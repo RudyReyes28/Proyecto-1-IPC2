@@ -11,12 +11,16 @@ package com.rudyreyes.proyecto.ipc2.modelo.entidades;
 public class Envio {
     
     private int idEnvio;
+    private int idPedido;
     private int codigoTienda;
     private int codigoUsuario;
     private String fechaSalida;
     private String fechaRecibida;
     private double totalEnvio;
     private String estado;
+    
+
+    
 
     public Envio(int idEnvio, int codigoTienda, int codigoUsuario, String fechaSalida, String fechaRecibida, double totalEnvio, String estado) {
         this.idEnvio = idEnvio;
@@ -37,6 +41,7 @@ public class Envio {
         this.estado = estado;
     }
 
+    
     public Envio(int codigoTienda, int codigoUsuario, String fechaSalida, String estado) {
         this.codigoTienda = codigoTienda;
         this.codigoUsuario = codigoUsuario;
@@ -44,6 +49,25 @@ public class Envio {
         this.estado = estado;
     }
 
+    public Envio(int codigoTienda, int codigoUsuario, String fechaSalida, String estado, int idPedido) {
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaSalida = fechaSalida;
+        this.estado = estado;
+        this.idPedido = idPedido;
+    }
+
+    public Envio(int idEnvio, int idPedido, int codigoTienda, int codigoUsuario, String fechaSalida, String fechaRecibida, double totalEnvio, String estado) {
+        this.idEnvio = idEnvio;
+        this.idPedido = idPedido;
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaSalida = fechaSalida;
+        this.fechaRecibida = fechaRecibida;
+        this.totalEnvio = totalEnvio;
+        this.estado = estado;
+    }
+    
     
     
     public int getIdEnvio() {
@@ -100,6 +124,14 @@ public class Envio {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
     
     

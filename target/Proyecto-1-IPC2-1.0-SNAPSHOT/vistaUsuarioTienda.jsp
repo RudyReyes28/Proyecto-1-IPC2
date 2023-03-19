@@ -59,7 +59,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Verificar Envios</h5>
                         <p class="card-text">Permite ver los envios de productos enviados por la bodega central</p>
-                        <a href="#" class="btn btn-primary">Ver Envio</a>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesTienda?accion=envios" class="btn btn-primary">Ver Envio</a>
                     </div>
                 </div>
             </div>

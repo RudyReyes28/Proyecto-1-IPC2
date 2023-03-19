@@ -23,14 +23,15 @@ public class EscribirEnvio {
         
         try {
             Connection conexion = con.getConnection();
-            ps = conexion.prepareStatement("INSERT INTO envios(idenvios, codigo_tienda,codigo_usuario,fecha_salida,fecha_recibida,total_envio,estado) VALUES (?,?,?,?,?,?,?)");
+            ps = conexion.prepareStatement("INSERT INTO envios(idenvios, idpedido, codigo_tienda,codigo_usuario,fecha_salida,fecha_recibida,total_envio,estado) VALUES (?,?,?,?,?,?,?,?)");
             ps.setInt(1, envio.getIdEnvio());
-            ps.setInt(2, envio.getCodigoTienda());
-            ps.setInt(3, envio.getCodigoUsuario());
-            ps.setString(4, envio.getFechaSalida());
-            ps.setString(5, envio.getFechaRecibida());
-            ps.setDouble(6, envio.getTotalEnvio());
-            ps.setString(7, envio.getEstado());
+            ps.setInt(2, envio.getIdPedido());
+            ps.setInt(3, envio.getCodigoTienda());
+            ps.setInt(4, envio.getCodigoUsuario());
+            ps.setString(5, envio.getFechaSalida());
+            ps.setString(6, envio.getFechaRecibida());
+            ps.setDouble(7, envio.getTotalEnvio());
+            ps.setString(8, envio.getEstado());
             ps.executeUpdate();
             ps.close();
             return true;

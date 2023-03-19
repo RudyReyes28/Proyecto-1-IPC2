@@ -268,6 +268,7 @@ public class LecturaJSON {
             JSONObject en = (JSONObject) envio;
             
             int codigo = Integer.parseInt(String.valueOf(en.get("id")));
+            int pedido = Integer.parseInt(String.valueOf(en.get("pedido")));
             int codigoTienda = Integer.parseInt(String.valueOf(en.get("tienda")));
             int codigoUsuario = Integer.parseInt(String.valueOf(en.get("usuario")));
             String fechaSalida = String.valueOf(en.get("fechaSalida"));
@@ -278,7 +279,7 @@ public class LecturaJSON {
             if(fechaRecibido.equals("")){
                 fechaRecibido = null;
             }
-            Envio envio1 = new Envio(codigo, codigoTienda, codigoUsuario, fechaSalida, fechaRecibido, total, estado);
+            Envio envio1 = new Envio(codigo, pedido, codigoTienda, codigoUsuario, fechaSalida, fechaRecibido, total, estado);
             boolean realizado = EscribirEnvio.agregarEnvio(envio1);
             
             if (realizado) {
@@ -314,13 +315,14 @@ public class LecturaJSON {
             JSONObject in = (JSONObject) incidencia;
             
             int codigo = Integer.parseInt(String.valueOf(in.get("id")));
+            int envio = Integer.parseInt(String.valueOf(in.get("envio")));
             int codigoTienda = Integer.parseInt(String.valueOf(in.get("tienda")));
             int codigoUsuario = Integer.parseInt(String.valueOf(in.get("usuario")));
             String fechaIncidencia = String.valueOf(in.get("fecha"));
             String solucion = String.valueOf(in.get("solucion"));
             String estado = String.valueOf(in.get("estado"));
             
-            Incidencia incidencia1 = new Incidencia(codigoTienda, codigoTienda, codigoUsuario, fechaIncidencia, solucion, estado);
+            Incidencia incidencia1 = new Incidencia(codigo, envio, codigoTienda, codigoUsuario, fechaIncidencia, solucion, estado);
             boolean realizado = EscribirIncidencia.agregarIncidencia(incidencia1);
             
             if(realizado){
@@ -353,13 +355,14 @@ public class LecturaJSON {
             JSONObject dev = (JSONObject) devolucion;
             
             int codigo = Integer.parseInt(String.valueOf(dev.get("id")));
+            int envio = Integer.parseInt(String.valueOf(dev.get("envio")));
             int codigoTienda = Integer.parseInt(String.valueOf(dev.get("tienda")));
             int codigoUsuario = Integer.parseInt(String.valueOf(dev.get("usuario")));
             String fechaDevolucion = String.valueOf(dev.get("fecha"));
             double total = Double.parseDouble(String.valueOf(dev.get("total")));
             String estado = String.valueOf(dev.get("estado"));
             
-            Devolucion devolucion1 = new Devolucion(codigo, codigoTienda, codigoUsuario, fechaDevolucion, total, estado);
+            Devolucion devolucion1 = new Devolucion(codigo, envio, codigoTienda, codigoUsuario, fechaDevolucion, total, estado);
             boolean realizado = EscribirDevolucion.agregarDevolucion(devolucion1);
             
             if(realizado){
