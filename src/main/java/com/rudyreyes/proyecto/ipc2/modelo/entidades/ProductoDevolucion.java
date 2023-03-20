@@ -25,6 +25,13 @@ public class ProductoDevolucion {
         this.motivo = motivo;
     }
 
+    public ProductoDevolucion(int codigo, int cantidad, String motivo) {
+        this.codigo = codigo;
+        this.cantidad = cantidad;
+        this.motivo = motivo;
+    }
+
+    
     
     public int getIdDevolucion() {
         return idDevolucion;

@@ -37,6 +37,20 @@ public class Incidencia {
         this.estado = estado;
     }
 
+    public Incidencia(int idEnvio, int codigoTienda, int codigoUsuario, String fechaIncidencia, String estado) {
+        this.idEnvio = idEnvio;
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaIncidencia = fechaIncidencia;
+        this.estado = estado;
+    }
+
+    public Incidencia(int idIncidencia, int codigoUsuario, String fechaIncidencia) {
+        this.idIncidencia = idIncidencia;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaIncidencia = fechaIncidencia;
+    }
+
     
     
     public int getIdIncidencia() {

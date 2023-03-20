@@ -48,6 +48,11 @@ public class ProductoEnviado {
         this.cantidad = cantidad;
         this.costoTotal = costoTotal;
     }
+
+    public ProductoEnviado(int codigo, int cantidad) {
+        this.codigo = codigo;
+        this.cantidad = cantidad;
+    }
     
     
 

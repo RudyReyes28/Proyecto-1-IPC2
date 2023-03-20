@@ -6,6 +6,7 @@ package com.rudyreyes.proyecto.ipc2.controlador.servletsBodega;
 
 import com.rudyreyes.proyecto.ipc2.modelo.Usuario;
 import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesEnvios;
+import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesIncidencias;
 import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesPedidos;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,15 +26,6 @@ import java.util.ArrayList;
 @WebServlet(name = "ServletOpcionesBodega", urlPatterns = {"/ServletOpcionesBodega"})
 public class ServletOpcionesBodega extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -46,14 +38,11 @@ public class ServletOpcionesBodega extends HttpServlet {
                         iniciarEnvio(request, response);
                         break;
                     case "incidencias":
-
+                        iniciarIncidencias(request, response);
                         break;
 
                     case "devoluciones":
-
-                        break;
-
-                    case "envios":
+                        iniciarDevoluciones(request, response);
                         break;
 
                     case "productos":
@@ -88,11 +77,6 @@ public class ServletOpcionesBodega extends HttpServlet {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
@@ -107,6 +91,35 @@ public class ServletOpcionesBodega extends HttpServlet {
         sesion.setAttribute("tiendas", tiendas);
         
         response.sendRedirect("moduloBodega/Envio.jsp");
+
+    }
+
+    private void iniciarIncidencias(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession sesion = request.getSession();
+        Usuario user = (Usuario) sesion.getAttribute("usuario");
+        int codigoUsuario = user.getCodigo();
+        
+        //OBTENER LOS ID DE LOS INCIDENCIAS CON ESTADO "ACTIVA"
+        ArrayList<Integer> tiendas = ConexionesEnvios.obtenerTiendas(codigoUsuario);
+        
+        sesion.setAttribute("tiendas", tiendas);
+        
+        response.sendRedirect("moduloBodega/solucionarIncidencia.jsp");
+        
+    }
+
+    private void iniciarDevoluciones(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession sesion = request.getSession();
+        Usuario user = (Usuario) sesion.getAttribute("usuario");
+        int codigoUsuario = user.getCodigo();
+        
+        
+        ArrayList<Integer> tiendas = ConexionesEnvios.obtenerTiendas(codigoUsuario);
+        
+        sesion.setAttribute("tiendas", tiendas);
+        
+        response.sendRedirect("moduloBodega/aceptarDevolucion.jsp");
+        
 
     }
 

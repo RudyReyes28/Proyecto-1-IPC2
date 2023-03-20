@@ -35,7 +35,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Incidencias</h5>
                         <p class="card-text">Puede realizar incidencias de algún envio que realizó la bodega central</p>
-                        <a href="#" class="btn btn-primary">Realizar Incidencia</a>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesTienda?accion=incidencias" class="btn btn-primary">Realizar Incidencia</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Devoluciones</h5>
                         <p class="card-text">Puede realizar devoluciones de los productos de algún envio </p>
-                        <a href="#" class="btn btn-primary">Realizar Devolucion</a>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesTienda?accion=devoluciones"" class="btn btn-primary">Realizar Devolucion</a>
                     </div>
                 </div>
             </div>

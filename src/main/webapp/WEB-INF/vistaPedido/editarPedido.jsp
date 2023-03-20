@@ -21,7 +21,7 @@
               method="POST" class="was-validated">
 
             <!--Botones de Navegacion -->
-           <!<jsp:include page="/WEB-INF/vistaPedido/botonesNavegacionEdicion.jsp"/>
+           <jsp:include page="/WEB-INF/vistaPedido/botonesNavegacionEdicion.jsp"/>
 
             <section id="details">
                 <div class="container">

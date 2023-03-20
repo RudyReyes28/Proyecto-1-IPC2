@@ -35,6 +35,21 @@ public class Devolucion {
         this.totalDevolucion = totalDevolucion;
         this.estado = estado;
     }
+
+    public Devolucion(int idEnvio, int codigoTienda, int codigoUsuario, String fechaDevolucion, String estado) {
+        this.idEnvio = idEnvio;
+        this.codigoTienda = codigoTienda;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaDevolucion = fechaDevolucion;
+        this.estado = estado;
+    }
+
+    public Devolucion(int idDevolucion, int codigoUsuario, String fechaDevolucion) {
+        this.idDevolucion = idDevolucion;
+        this.codigoUsuario = codigoUsuario;
+        this.fechaDevolucion = fechaDevolucion;
+    }
+    
     
     
 

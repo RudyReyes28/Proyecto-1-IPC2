@@ -164,6 +164,33 @@ public class ConexionesRecibirEnvio {
         
     }
     
+    public static boolean modificarFechaEnvio(int idEnvio,String fecha){
+       
+        Conexion con = new Conexion();
+        PreparedStatement ps = null;
+        
+        try {
+            Connection conexion = con.getConnection();
+            ps = conexion.prepareStatement("UPDATE envios SET fecha_recibida=? WHERE idenvios =?");
+            
+            ps.setString(1, fecha);
+            ps.setInt(2, idEnvio);
+            
+            int resultado = ps.executeUpdate();
+            
+            conexion.close();
+            
+            if(resultado>0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        
+    }
+    
     public static boolean modificarCatalogoTienda(int idTienda, int codigoP, int cantidad){
        
         Conexion con = new Conexion();

@@ -6,6 +6,7 @@ package com.rudyreyes.proyecto.ipc2.controlador;
 
 import com.rudyreyes.proyecto.ipc2.modelo.Usuario;
 import com.rudyreyes.proyecto.ipc2.modelo.entidades.Pedido;
+import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesIncidencias;
 import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesPedidos;
 import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesRecibirEnvio;
 import jakarta.servlet.ServletException;
@@ -37,11 +38,11 @@ public class ServletOpcionesTienda extends HttpServlet {
                         iniciarPedido(request, response);
                         break;
                     case "incidencias":
-
+                        iniciarIncidencia(request, response);
                         break;
 
                     case "devoluciones":
-
+                        iniciarDevolucion(request, response);
                         break;
 
                     case "envios":
@@ -138,6 +139,45 @@ public class ServletOpcionesTienda extends HttpServlet {
             sesion.setAttribute("listadoEnvio", listaEnvios);
             response.sendRedirect("moduloTienda/recibirEnvio.jsp");
         } else {
+            response.sendRedirect("vistaUsuarioTienda.jsp");
+        }
+    }
+
+    private void iniciarIncidencia(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession sesion = request.getSession();
+        Usuario user = (Usuario) sesion.getAttribute("usuario");
+        int codigoUsuario = user.getCodigo();
+        int codigoTienda = ConexionesPedidos.obtenerTienda(codigoUsuario);
+        
+        //OBTENER LOS ID DE LOS ENVIOS CON ESTADO "RECIBIDO"
+        ArrayList<Integer> listaEnvios = ConexionesIncidencias.obtenerIdEnvios(codigoTienda);
+        
+        if(listaEnvios != null){
+            sesion.setAttribute("codigoUsuario", codigoUsuario);
+            sesion.setAttribute("codigoTienda", codigoTienda);
+            sesion.setAttribute("listadoEnvio", listaEnvios);
+            response.sendRedirect("moduloTienda/incidencia.jsp");
+        }else {
+            response.sendRedirect("vistaUsuarioTienda.jsp");
+        }
+    }
+
+    private void iniciarDevolucion(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        HttpSession sesion = request.getSession();
+        Usuario user = (Usuario) sesion.getAttribute("usuario");
+        int codigoUsuario = user.getCodigo();
+        int codigoTienda = ConexionesPedidos.obtenerTienda(codigoUsuario);
+        
+        //OBTENER LOS ID DE LOS ENVIOS CON ESTADO "RECIBIDO"
+        ArrayList<Integer> listaEnvios = ConexionesIncidencias.obtenerIdEnvios(codigoTienda);
+        
+        if(listaEnvios != null){
+            sesion.setAttribute("codigoUsuario", codigoUsuario);
+            sesion.setAttribute("codigoTienda", codigoTienda);
+            sesion.setAttribute("listadoEnvio", listaEnvios);
+            response.sendRedirect("moduloTienda/devolucion.jsp");
+        }else {
             response.sendRedirect("vistaUsuarioTienda.jsp");
         }
     }

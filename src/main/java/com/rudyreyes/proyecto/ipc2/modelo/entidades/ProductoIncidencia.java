@@ -21,6 +21,14 @@ public class ProductoIncidencia {
         this.motivo = motivo;
     }
 
+    public ProductoIncidencia(int codigo, int cantidad, String motivo) {
+        this.codigo = codigo;
+        this.cantidad = cantidad;
+        this.motivo = motivo;
+    }
+
+    
+    
     public int getIdIncidencia() {
         return idIncidencia;
     }
