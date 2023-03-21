@@ -19,7 +19,6 @@
 
         <div class="row my-3 " >
 
-
             <div class="col-sm-4 mb-3 mb-sm-0">
                 <div class="card">
                     <div class="card-body">
@@ -54,9 +53,6 @@
         </div>
         <div class="row my-3 " >
 
-
-
-
             <div class="col-sm-4 ">
                 <div class="card">
                     <div class="card-body">
@@ -72,7 +68,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Reportes</h5>
                         <p class="card-text">Puede ver todos los reportes generados por los usuarios</p>
-                        <a href="#" class="btn btn-primary">Ver Reportes</a>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesBodega?accion=reportes" class="btn btn-primary">Ver Reportes</a>
                     </div>
                 </div>
             </div>

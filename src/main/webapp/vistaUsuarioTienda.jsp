@@ -45,7 +45,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Devoluciones</h5>
                         <p class="card-text">Puede realizar devoluciones de los productos de algún envio </p>
-                        <a href="${pageContext.request.contextPath}/ServletOpcionesTienda?accion=devoluciones"" class="btn btn-primary">Realizar Devolucion</a>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesTienda?accion=devoluciones" class="btn btn-primary">Realizar Devolucion</a>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Reportes</h5>
                         <p class="card-text">Permite visualizar todos los reportes generados por el usuario</p>
-                        <a href="#" class="btn btn-primary">Realizar Devolucion</a>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesTienda?accion=reportes" class="btn btn-primary">Reportes</a>
                     </div>
                 </div>
             </div>

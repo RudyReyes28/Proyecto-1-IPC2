@@ -18,6 +18,8 @@ public class Envio {
     private String fechaRecibida;
     private double totalEnvio;
     private String estado;
+    private int incidencias;
+    private int devoluciones;
     
 
     
@@ -66,6 +68,15 @@ public class Envio {
         this.fechaRecibida = fechaRecibida;
         this.totalEnvio = totalEnvio;
         this.estado = estado;
+    }
+
+    public Envio(int idEnvio) {
+        this.idEnvio = idEnvio;
+    }
+
+    public Envio(int idEnvio, double totalEnvio) {
+        this.idEnvio = idEnvio;
+        this.totalEnvio = totalEnvio;
     }
     
     
@@ -132,6 +143,22 @@ public class Envio {
 
     public void setIdPedido(int idPedido) {
         this.idPedido = idPedido;
+    }
+
+    public int getIncidencias() {
+        return incidencias;
+    }
+
+    public void setIncidencias(int incidencias) {
+        this.incidencias = incidencias;
+    }
+
+    public int getDevoluciones() {
+        return devoluciones;
+    }
+
+    public void setDevoluciones(int devoluciones) {
+        this.devoluciones = devoluciones;
     }
     
     

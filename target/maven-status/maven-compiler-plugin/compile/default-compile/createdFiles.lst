@@ -1,3 +1,4 @@
+com/rudyreyes/proyecto/ipc2/controlador/servletsTienda/ServletTiendaReportes.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirEnvio.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirIncidencia.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirTiendas.class
@@ -9,6 +10,7 @@ com/rudyreyes/proyecto/ipc2/controlador/servletsTienda/ServletRecibirEnvio.class
 com/rudyreyes/proyecto/ipc2/modelo/entidades/Devolucion.class
 com/rudyreyes/proyecto/ipc2/controlador/ServletLoginUsuario.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarSupervisorTiendas.class
+com/rudyreyes/proyecto/ipc2/controlador/servletsBodega/ServletBodegaReportes.class
 com/rudyreyes/proyecto/ipc2/controlador/servletsBodega/ServletOpcionesBodega.class
 com/rudyreyes/proyecto/ipc2/modelo/entidades/Administrador.class
 com/rudyreyes/proyecto/ipc2/controlador/servletsSupervisor/ServletAceptarPedidos.class
@@ -56,3 +58,5 @@ com/rudyreyes/proyecto/ipc2/modelo/Usuario.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirUsuariosTienda.class
 com/rudyreyes/proyecto/ipc2/controlador/servletsAdmin/ServletCreacionUsuarios.class
 com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarAdminSupervisor.class
+com/rudyreyes/proyecto/ipc2/controlador/servletsAdmin/ServletAdminReportes.class
+com/rudyreyes/proyecto/ipc2/modelo/util/ObtenerReportes.class

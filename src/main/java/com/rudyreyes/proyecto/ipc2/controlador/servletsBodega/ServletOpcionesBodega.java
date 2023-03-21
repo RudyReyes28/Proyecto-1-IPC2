@@ -50,7 +50,7 @@ public class ServletOpcionesBodega extends HttpServlet {
                         break;
 
                     case "reportes":
-
+                        iniciarReportes(request, response);
                         break;
 
                     default:
@@ -121,6 +121,20 @@ public class ServletOpcionesBodega extends HttpServlet {
         response.sendRedirect("moduloBodega/aceptarDevolucion.jsp");
         
 
+    }
+
+    private void iniciarReportes(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession sesion = request.getSession();
+        Usuario user = (Usuario) sesion.getAttribute("usuario");
+        int codigoUsuario = user.getCodigo();
+        
+        
+        ArrayList<Integer> tiendas = ConexionesEnvios.obtenerTiendas(codigoUsuario);
+        
+        sesion.setAttribute("tiendas", tiendas);
+        sesion.setAttribute("codigoUsuario", codigoUsuario);
+        
+        response.sendRedirect("moduloBodega/reportes.jsp");
     }
 
 }

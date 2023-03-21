@@ -54,7 +54,7 @@ public class ServletOpcionesTienda extends HttpServlet {
                         break;
 
                     case "reportes":
-
+                        iniciarReportes(request, response);
                         break;
 
                     default:
@@ -180,6 +180,17 @@ public class ServletOpcionesTienda extends HttpServlet {
         }else {
             response.sendRedirect("vistaUsuarioTienda.jsp");
         }
+    }
+
+    private void iniciarReportes(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession sesion = request.getSession();
+        Usuario user = (Usuario) sesion.getAttribute("usuario");
+        int codigoUsuario = user.getCodigo();
+        int codigoTienda = ConexionesPedidos.obtenerTienda(codigoUsuario);
+        
+        sesion.setAttribute("codigoUsuario", codigoUsuario);
+        sesion.setAttribute("codigoTienda", codigoTienda);
+        response.sendRedirect("moduloTienda/reportes.jsp");
     }
 
 }

@@ -51,6 +51,11 @@ public class Incidencia {
         this.fechaIncidencia = fechaIncidencia;
     }
 
+    public Incidencia(int idIncidencia, String solucion) {
+        this.idIncidencia = idIncidencia;
+        this.solucion = solucion;
+    }
+
     
     
     public int getIdIncidencia() {

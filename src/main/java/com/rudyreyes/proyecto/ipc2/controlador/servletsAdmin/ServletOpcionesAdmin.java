@@ -4,7 +4,9 @@
  */
 package com.rudyreyes.proyecto.ipc2.controlador.servletsAdmin;
 
+import com.rudyreyes.proyecto.ipc2.modelo.Usuario;
 import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesAdmin;
+import com.rudyreyes.proyecto.ipc2.modelo.util.ConexionesPedidos;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -36,6 +38,10 @@ public class ServletOpcionesAdmin extends HttpServlet {
 
                     case "crearS":
                         crearUsuarioSupervisor(request, response);
+                        break;
+                        
+                    case "reportes":
+                        iniciarReportes(request, response);
                         break;
                         
                     default:
@@ -94,6 +100,13 @@ public class ServletOpcionesAdmin extends HttpServlet {
         
         response.sendRedirect("moduloAdmin/crearUsuarioSupervisor.jsp");
         
+    }
+
+    private void iniciarReportes(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession sesion = request.getSession();
+        
+        
+        response.sendRedirect("moduloAdmin/reportes.jsp");
     }
 
 }

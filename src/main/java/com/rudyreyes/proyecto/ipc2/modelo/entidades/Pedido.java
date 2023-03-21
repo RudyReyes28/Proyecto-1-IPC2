@@ -19,6 +19,7 @@ public class Pedido {
     private String fechaPedido;
     private double totalPedido;
     private String estado;
+    private int cantPedidos;
 
     public Pedido(int idPedido, int codigoTienda, int codigoUsuario, String fechaPedido, double totalPedido, String estado) {
         this.idPedido = idPedido;
@@ -47,6 +48,16 @@ public class Pedido {
         this.codigoUsuario = codigoUsuario;
         this.fechaPedido = fechaPedido;
         this.totalPedido = totalPedido;
+    }
+
+    public Pedido(int idPedido, double totalPedido) {
+        this.idPedido = idPedido;
+        this.totalPedido = totalPedido;
+    }
+
+    public Pedido(int idTienda, int cantPedidos) {
+        this.codigoTienda = idTienda;
+        this.cantPedidos = cantPedidos;
     }
     
     
@@ -97,6 +108,15 @@ public class Pedido {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public int getCantPedidos() {
+        return cantPedidos;
+    }
+
+    public void setCantPedidos(int cantPedidos) {
+        this.cantPedidos = cantPedidos;
+    }
+    
     
     
 }

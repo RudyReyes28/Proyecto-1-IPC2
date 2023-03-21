@@ -1,4 +1,5 @@
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/Conexion.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsBodega/ServletBodegaReportes.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesRecibirEnvio.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/ProductoDevolucion.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsTienda/ServletCrearIncidencias.java
@@ -26,12 +27,14 @@
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirUsuariosTienda.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirAdmin.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/Devolucion.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsAdmin/ServletAdminReportes.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirDevolucion.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/Pedido.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/ValidarUsuario.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/LecturaJSON.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/ProductoIncidencia.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsAdmin/ServletCreacionUsuarios.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ObtenerReportes.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsSupervisor/ServletAceptarPedidos.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/UsuarioTienda.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesIncidencias.java
@@ -39,6 +42,7 @@
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/ProductoPedido.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesSolucionarIncidencia.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirIncidencia.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsTienda/ServletTiendaReportes.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarBodegaCatalogo.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsBodega/ServletOpcionesBodega.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesEnvios.java

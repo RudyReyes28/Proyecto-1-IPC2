@@ -54,61 +54,9 @@
             <div class="col-sm-4 mb-3 mb-sm-0">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Editar Usuario de Tienda</h5>
-                        <p class="card-text">Puede editar un usuario de tienda</p>
-                        <a href="#" class="btn btn-primary">Editar Usuario</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 ">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Editar Usuario de Bodega</h5>
-                        <p class="card-text">Puede editar un usuario de bodega</p>
-                        <a href="#" class="btn btn-primary">Editar Usuario</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 ">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Editar Usuario Supervisor</h5>
-                        <p class="card-text">Puede editar un usuario supervisor</p>
-                        <a href="#" class="btn btn-primary">Editar Usuario</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row my-3 " >
-            <div class="col-sm-4 mb-3 mb-sm-0">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Desactivar Usuario de Tienda</h5>
-                        <p class="card-text">Puede desactivar un usuario de tienda</p>
-                        <a href="#" class="btn btn-primary">Desactivar Usuario</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 ">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Editar Usuario de Bodega</h5>
-                        <p class="card-text">Puede desactivar un usuario de bodega</p>
-                        <a href="#" class="btn btn-primary">Desactivar Usuario</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 ">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Crear Usuario Supervisor</h5>
-                        <p class="card-text">Puede desactivar un usuario supervisor</p>
-                        <a href="#" class="btn btn-primary">Desactivar Usuario</a>
+                        <h5 class="card-title">Reportes</h5>
+                        <p class="card-text">Puede mirar los reportes de las tiendas</p>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesAdmin?accion=reportes" class="btn btn-primary">Ver reportes</a>
                     </div>
                 </div>
             </div>
