@@ -98,7 +98,7 @@ public class ServletOpcionesTienda extends HttpServlet {
         
         String tipo = ConexionesPedidos.obtenerTipoTienda(codigoTienda);
         
-        if(tipo.equalsIgnoreCase("supervisada")){
+        if(tipo.equalsIgnoreCase("SUPERVISADA")){
             estado = "PENDIENTE";
         }
 

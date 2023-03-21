@@ -21,6 +21,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+
 /**
  *
  * @author rudy-reyes
@@ -28,11 +29,10 @@ import java.util.ArrayList;
 @WebServlet(name = "ServletAceptarDevoluciones", urlPatterns = {"/ServletAceptarDevoluciones"})
 public class ServletAceptarDevoluciones extends HttpServlet {
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         String accion = request.getParameter("accion");
 
         try {
@@ -48,17 +48,17 @@ public class ServletAceptarDevoluciones extends HttpServlet {
                     case "aceptar":
                         aceptarDevolucion(request, response);
                         break;
-                        
+
                     case "rechazar":
                         rechazarDevolucion(request, response);
                         break;
 
                     default:
-                    accionDefault(request, response); 
+                        accionDefault(request, response);
 
                 }
             } else {
-                accionDefault(request, response); 
+                accionDefault(request, response);
             }
         } catch (Exception e) {
             //accionDefault(request, response);
@@ -86,10 +86,10 @@ public class ServletAceptarDevoluciones extends HttpServlet {
 
         response.sendRedirect("moduloBodega/aceptarDevolucion.jsp");
     }
-    
+
     private void insertarDevoluciones(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        
-    HttpSession sesion = request.getSession();
+
+        HttpSession sesion = request.getSession();
         int tienda = Integer.parseInt(request.getParameter("tienda"));
 
         ArrayList<Devolucion> devoluciones = ConexionesAceptarDevolucion.obtenerDevoluciones(tienda);
@@ -119,15 +119,15 @@ public class ServletAceptarDevoluciones extends HttpServlet {
         HttpSession sesion = request.getSession();
         int idDevolucion = (int) sesion.getAttribute("idDevolucion");
         int idTienda = (int) sesion.getAttribute("idTienda");
-        
+
         realizarOperaciones(idDevolucion, idTienda);
         ConexionesAceptarDevolucion.modificarEstadoDevolucion(idDevolucion, "ACEPTADA");
         //COSA 1: CAMBIAR LOS VALORES DE LOS PRODUCTOS
         //COSA 2: CAMBIAR EL ESTADO DE LA DEVOLUCION
         response.sendRedirect("vistaUsuarioBodega.jsp");
-        
+
     }
-    
+
     private void realizarOperaciones(int idDevolucion, int idTienda) {
         ArrayList<ProductoDevolucion> listadoP = ConexionesAceptarDevolucion.obtenerProductosDevolucion(idDevolucion);
 

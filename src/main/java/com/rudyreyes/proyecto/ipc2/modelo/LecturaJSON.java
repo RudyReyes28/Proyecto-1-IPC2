@@ -79,7 +79,7 @@ public class LecturaJSON {
             int codigo = Integer.parseInt(String.valueOf(t.get("codigo")));
             String nombre = String.valueOf(t.get("nombre"));
             String direccion = String.valueOf(t.get("direccion"));
-            String tipoTienda = String.valueOf(t.get("tipo"));
+            String tipoTienda = String.valueOf(t.get("tipo")).toUpperCase();
             
             Tienda tienda1 = new Tienda(codigo, nombre, direccion, tipoTienda);
             boolean realizado = EscribirTiendas.agregarTiendas(tienda1);
@@ -229,7 +229,7 @@ public class LecturaJSON {
             int codigoUsuario = Integer.parseInt(String.valueOf(pe.get("usuario")));
             String fecha = String.valueOf(pe.get("fecha"));
             double total = Double.parseDouble(String.valueOf(pe.get("total")));
-            String estado = String.valueOf(pe.get("estado"));
+            String estado = String.valueOf(pe.get("estado")).toUpperCase();
             
             Pedido pedidoU = new Pedido(codigo, codigoTienda, codigoUsuario, fecha, total, estado);
             
@@ -274,7 +274,7 @@ public class LecturaJSON {
             String fechaSalida = String.valueOf(en.get("fechaSalida"));
             String fechaRecibido = String.valueOf(en.get("fechaRecibido"));
             double total = Double.parseDouble(String.valueOf(en.get("total")));
-            String estado = String.valueOf(en.get("estado"));
+            String estado = String.valueOf(en.get("estado")).toUpperCase();
             
             if(fechaRecibido.equals("")){
                 fechaRecibido = null;
@@ -320,7 +320,7 @@ public class LecturaJSON {
             int codigoUsuario = Integer.parseInt(String.valueOf(in.get("usuario")));
             String fechaIncidencia = String.valueOf(in.get("fecha"));
             String solucion = String.valueOf(in.get("solucion"));
-            String estado = String.valueOf(in.get("estado"));
+            String estado = String.valueOf(in.get("estado")).toUpperCase();
             
             Incidencia incidencia1 = new Incidencia(codigo, envio, codigoTienda, codigoUsuario, fechaIncidencia, solucion, estado);
             boolean realizado = EscribirIncidencia.agregarIncidencia(incidencia1);
@@ -360,7 +360,7 @@ public class LecturaJSON {
             int codigoUsuario = Integer.parseInt(String.valueOf(dev.get("usuario")));
             String fechaDevolucion = String.valueOf(dev.get("fecha"));
             double total = Double.parseDouble(String.valueOf(dev.get("total")));
-            String estado = String.valueOf(dev.get("estado"));
+            String estado = String.valueOf(dev.get("estado")).toUpperCase();
             
             Devolucion devolucion1 = new Devolucion(codigo, envio, codigoTienda, codigoUsuario, fechaDevolucion, total, estado);
             boolean realizado = EscribirDevolucion.agregarDevolucion(devolucion1);

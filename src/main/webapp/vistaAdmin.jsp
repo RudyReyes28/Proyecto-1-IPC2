@@ -9,9 +9,113 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Administrador</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     </head>
     <body>
-        <h1>Hello ADMIN! ${usuario.nombre}</h1>
+        <jsp:include page="/WEB-INF/barraCerrarSesion.jsp"/>
+
+        <div class="row my-3 " >
+
+
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Crear Usuario de Tienda</h5>
+                        <p class="card-text">Puede crear un usuario de tienda para que gestione una tienda</p>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesAdmin?accion=crearT" class="btn btn-primary">Crear Usuario</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Crear Usuario de Bodega</h5>
+                        <p class="card-text">Puede crear un usuario para que gestione la bodega central</p>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesAdmin?accion=crearB" class="btn btn-primary">Crear Usuario</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Crear Usuario Supervisor</h5>
+                        <p class="card-text">Puede crear un usuario para que supervise las tiendas supervisadas</p>
+                        <a href="${pageContext.request.contextPath}/ServletOpcionesAdmin?accion=crearS" class="btn btn-primary">Crear Usuario</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-3 " >
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Editar Usuario de Tienda</h5>
+                        <p class="card-text">Puede editar un usuario de tienda</p>
+                        <a href="#" class="btn btn-primary">Editar Usuario</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Editar Usuario de Bodega</h5>
+                        <p class="card-text">Puede editar un usuario de bodega</p>
+                        <a href="#" class="btn btn-primary">Editar Usuario</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Editar Usuario Supervisor</h5>
+                        <p class="card-text">Puede editar un usuario supervisor</p>
+                        <a href="#" class="btn btn-primary">Editar Usuario</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-3 " >
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Desactivar Usuario de Tienda</h5>
+                        <p class="card-text">Puede desactivar un usuario de tienda</p>
+                        <a href="#" class="btn btn-primary">Desactivar Usuario</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Editar Usuario de Bodega</h5>
+                        <p class="card-text">Puede desactivar un usuario de bodega</p>
+                        <a href="#" class="btn btn-primary">Desactivar Usuario</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Crear Usuario Supervisor</h5>
+                        <p class="card-text">Puede desactivar un usuario supervisor</p>
+                        <a href="#" class="btn btn-primary">Desactivar Usuario</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
     </body>
 </html>

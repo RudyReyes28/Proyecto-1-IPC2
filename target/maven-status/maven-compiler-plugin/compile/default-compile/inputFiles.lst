@@ -2,12 +2,15 @@
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesRecibirEnvio.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/ProductoDevolucion.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsTienda/ServletCrearIncidencias.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesAceptarPedido.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsAdmin/ServletOpcionesAdmin.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/SupervisorTienda.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsTienda/ServletCrearDevolucion.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/ServletOpcionesTienda.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesDevoluciones.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesPedidos.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarAdminSupervisor.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsSupervisor/ServletOpcionesSupervisor.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/Usuario.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/Envio.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/UsuarioBodega.java
@@ -28,6 +31,8 @@
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/ValidarUsuario.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/LecturaJSON.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/ProductoIncidencia.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsAdmin/ServletCreacionUsuarios.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsSupervisor/ServletAceptarPedidos.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/UsuarioTienda.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesIncidencias.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/EscribirCatalogo.java
@@ -37,6 +42,7 @@
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/llenarbd/ConectarBodegaCatalogo.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsBodega/ServletOpcionesBodega.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesEnvios.java
+/home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/util/ConexionesAdmin.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/ServletControladorPedido.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/controlador/servletsBodega/ServletControladorEnvios.java
 /home/rudy-reyes/Escritorio/Proyecto1 IPC2/Proyecto-1-IPC2/src/main/java/com/rudyreyes/proyecto/ipc2/modelo/entidades/Administrador.java
