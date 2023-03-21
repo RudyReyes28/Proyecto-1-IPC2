@@ -43,7 +43,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Reporte 2</h5>
                         <p class="card-text">Reporte de los 5 usuarios con más envíos generados en un intervalo de tiempo</p>
-                        <a href="${pageContext.request.contextPath}/ServletAdminReportes?accion=reporte2" class="btn btn-primary">Ver reporte 2</a>
+                        <a href="#" class="btn btn-primary">Ver reporte 2</a>
                     </div>
                 </div>
             </div>

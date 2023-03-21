@@ -245,13 +245,13 @@ public class ServletControladorEnvios extends HttpServlet {
 
         ConexionesEnvios.modificarCostoEnvio(idEnvio, totalEnvio);
         ConexionesEnvios.modificarEstadoPedido(idPedido);
-        /*try{
-            sesion.removeAttribute("idPedido");
-            sesion.removeAttribute("listadoP");---->
-            sesion.removeAttribute("catalogo");
+        try{
+            
+            sesion.removeAttribute("ListaPedidos");
         }catch(Exception e){
             e.printStackTrace();
-        }*/
+        }
+        
         response.sendRedirect("vistaUsuarioBodega.jsp");
     }
 

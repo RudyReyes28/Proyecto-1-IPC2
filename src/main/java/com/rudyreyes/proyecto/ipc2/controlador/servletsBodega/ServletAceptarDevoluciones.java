@@ -124,6 +124,12 @@ public class ServletAceptarDevoluciones extends HttpServlet {
         ConexionesAceptarDevolucion.modificarEstadoDevolucion(idDevolucion, "ACEPTADA");
         //COSA 1: CAMBIAR LOS VALORES DE LOS PRODUCTOS
         //COSA 2: CAMBIAR EL ESTADO DE LA DEVOLUCION
+        
+        try{
+            sesion.removeAttribute("listaDevolucion");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         response.sendRedirect("vistaUsuarioBodega.jsp");
 
     }
@@ -141,6 +147,12 @@ public class ServletAceptarDevoluciones extends HttpServlet {
         HttpSession sesion = request.getSession();
         int idDevolucion = (int) sesion.getAttribute("idDevolucion");
         ConexionesAceptarDevolucion.modificarEstadoDevolucion(idDevolucion, "RECHAZADA");
+        
+        try{
+            sesion.removeAttribute("listaDevolucion");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         response.sendRedirect("vistaUsuarioBodega.jsp");
     }
 

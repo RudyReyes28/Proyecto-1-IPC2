@@ -172,13 +172,13 @@ public class ServletControladorPedido extends HttpServlet {
          }
          
         ConexionesPedidos.modificarCostoPedido(idPedido, totalPedido);
-        /*try{
-            sesion.removeAttribute("idPedido");
-            sesion.removeAttribute("listadoP");---->
-            sesion.removeAttribute("catalogo");
+        
+        try{
+            
+            sesion.removeAttribute("listadoP");
         }catch(Exception e){
             e.printStackTrace();
-        }*/
+        }
         response.sendRedirect("vistaUsuarioTienda.jsp");
         
     }

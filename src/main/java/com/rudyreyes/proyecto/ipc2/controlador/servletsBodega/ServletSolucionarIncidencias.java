@@ -108,6 +108,13 @@ public class ServletSolucionarIncidencias extends HttpServlet {
         
         ConexionesSolucionarIncidencia.agregarSolucion(solucion, idIncidencia);
         ConexionesSolucionarIncidencia.modificarEstadoIncidencia(idIncidencia, "SOLUCIONADA");
+        
+        try{
+            
+            sesion.removeAttribute("listaIncidencia");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         response.sendRedirect("vistaUsuarioBodega.jsp");
 
     }

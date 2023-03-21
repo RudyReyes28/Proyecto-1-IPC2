@@ -136,6 +136,12 @@ public class ServletCrearIncidencias extends HttpServlet {
             
         }
         
+        try{
+            
+            sesion.removeAttribute("listado");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         response.sendRedirect("vistaUsuarioTienda.jsp");
         //PRIMERO NECESITO CREAR LA INCIDENCIA, Y DESPUES AGREGARLE LOS PRODUCTOS
     }

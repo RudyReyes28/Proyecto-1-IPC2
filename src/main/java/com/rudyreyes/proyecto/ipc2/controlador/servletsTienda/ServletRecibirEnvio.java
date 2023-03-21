@@ -105,6 +105,13 @@ public class ServletRecibirEnvio extends HttpServlet {
             ConexionesRecibirEnvio.modificarEstadoEnvio(idEnvio, "RECIBIDO");
             realizarOperaciones(idEnvio, idTienda);
         }
+        
+        try{
+            
+            sesion.removeAttribute("listado");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
         response.sendRedirect("vistaUsuarioTienda.jsp");
 

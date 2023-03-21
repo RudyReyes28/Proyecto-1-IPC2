@@ -142,6 +142,13 @@ public class ServletCrearDevolucion extends HttpServlet {
         } else {
             
         }
+        
+        try{
+            
+            sesion.removeAttribute("listado");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         response.sendRedirect("vistaUsuarioTienda.jsp");
     }
 
